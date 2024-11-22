@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Inicio</title>
+{% endblock extrahead%}
+
+{% block content %}
+
+<h1 class="text-center my-5 display-4 fw-bold">Nuestros Héroes</h1>
+<div class="table-responsive p-3 shadow-sm bg-white rounded">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for marvel in marvel %}
+            <tr>
+
+                <td>{{ marvel.nombre }}</td>
+                <td><a class="btn btn-success rounded-pill px-4" href="{% url 'detallemarvel' marvel.id %}">Detalles</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<title>Presentacion</title>
+{% endblock extrahead%}
+
+{% block content %}
+
+<div class="contenido-menu">
+    
+    <h1 class="titulo-menu">BIENVENIDO A LA PÁGINA DE LOS HÉROES DE MARVEL</h1>
+    <img src="{% static '/imagenes/superheroes-marvel.png' %}" width="800px">
+   
+    <p>!Aqui podrás conocer más acerca de tus superheroes favoritos, dale <a href="{% url 'index' %}">clic aquí</a> o en
+        la barra de navegación en la sección "Héroes" para que
+        puedas ver la lista de nuestros superheroes!
+    </p>
+   
+</div>
+
+
+{% endblock content %}
